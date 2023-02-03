@@ -20,7 +20,7 @@ public:
 		:m_Name(name){}//此处m_Name为初始化列表，name为成员变量
 	//初始化列表是在构造函数的定义后面，以冒号开头。
 	//它包含初始化表达式，将成员变量m_Name初始化为构造函数的参数name。
-	std::string Getname() { return m_Name; }
+	std::string Getname() override { return m_Name; }//override可去，但最好加上，因为它可以帮助我们检查子类函数名是否写错、父类函数是否标为虚函数。
 };
 
 void PrintName(Entity* entity)//调用方法时，如果是Entity，则会从Entity的类中寻找方法。
